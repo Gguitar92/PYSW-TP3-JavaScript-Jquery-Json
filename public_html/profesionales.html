@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>OSjuy</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link href="css/styles.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+          <div class="contenedor">
+        <header class="container">
+            <img src="img/img_header.bmp" class="img-responsive hidden-xs col-sm-2"/>
+            <span class="col-md-8"> OSJuy</span>
+        </header>
+
+        <nav class="container navbar navbar-default">
+            <div class="">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+
+                <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li ><a href="index.html">Inicio</a></li>
+                        <li><a href="#">Novedades</a></li>
+                        <li><a href="#">Galeria</a></li>
+                        <li><a href="#">Contacto</a></li>
+                        <li class="active"><a href="profesionales.html">Profesionales</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" 
+                               role="button" aria-expanded="false">
+                                Administracion <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="profesionales.html">Profesionales</a></li>
+                                <li><a href="#">Articulos</a></li>
+                                <li><a href="#">Foros</a></li>                        
+                            </ul>
+                        </li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+        <div class="main container">
+            <div class="container col-sm-9">
+                <br>
+                <!--FORMULARIO-->
+                <form class="form-horizontal col-sm-offset-2 col-sm-8" style="background: #ccc; border-radius: 20px">
+                    <h3 class="text-center" style="color: #FF3604">
+                        Busque un Profesional
+                    </h3>
+                    <div class="form-group" >
+                        <label for="apellido" class="col-sm-2 control-label">Apellido:</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="apellido" placeholder="Apellido:">
+                        </div>
+                    </div>
+
+                    <div class="form-group" >
+                        <label for="nombre" class="col-sm-2 control-label">Nombre:</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="nombre" placeholder="Nombre:">
+                        </div>
+                    </div>
+
+                    <div class="form-group" >
+                        <label for="matricula" class="col-sm-2 control-label">Matricula:</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="matricula" placeholder="Matricula:">
+                        </div>
+                    </div>
+
+                    <div class="form-group" >
+                        <label for="matricula-date" class="col-sm-2 control-label">Matriculado desde:</label>
+                        <div class="col-sm-8">
+                            <input type="date" class="form-control" id="matricula-date" >
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="ambito" class="col-sm-2 control-label">Ambito:</label>
+                        <div class="col-sm-8">
+                            <input type="radio" class="radio-inline" name="ambito" value="Prov" checked>Prov
+                            <input type="radio" class="radio-inline" name="ambito" value="Nac">Nac
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="button" class="btn btn-primary">
+                                <span class="glyphicon glyphicon-search"></span>
+                                Buscar
+                            </button>
+                            <button type="button" class="btn btn-success">
+                                <span class="glyphicon glyphicon-erase"></span>
+                                Limpiar
+                            </button>
+                        </div>
+                    </div>
+                </form>
+                
+                <!--TABLA-->
+                <h3 class="text-center" style="color: #FF3604">
+                    Profesionales Encontrados
+                </h3>
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover" style="background: white">
+                        <tr class="active">
+                            <th>Apellido</th>
+                            <th>Nombre</th>
+                            <th>Email</th>
+                            <th>Matricula</th>
+                            <th>Fecha de Matr.</th>
+                            <th>Ambito</th>
+                        </tr>
+
+                        <tr class="danger">
+                            <td>Maizarez</td>
+                            <td>Raul alberto</td>
+                            <td>Maizarez@gmail.com</td>
+                            <td>2345</td>
+                            <td>22-10-1997</td>
+                            <td>Provincial</td>
+                        </tr>
+
+                        <tr>
+                            <td>rodrigez</td>
+                            <td>jose Ramon</td>
+                            <td>jose@hotmail.com</td>
+                            <td>8474</td>
+                            <td>22-10-1997</td>
+                            <td>Nacioonal</td>
+                        </tr>
+
+                        <tr class="success">
+                            <td>Pereira</td>
+                            <td>Pedro Samuel</td>
+                            <td>pereira@gmail.com</td>
+                            <td>2455</td>
+                            <td>22-10-1997</td>
+                            <td>Nacioonal</td>
+                        </tr>
+
+                        <tr>
+                            <td>Sosa</td>
+                            <td>Enrique Alberto</td>
+                            <td>sosa@gmail.com</td>
+                            <td>2488</td>
+                            <td>22-10-1997</td>
+                            <td>Nacioonal</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="aside container col-sm-3 "> 
+                <aside>
+                    <span>Newslater</span>
+                    <input type="text" placeholder="Ingrese aqui su mail"><br/>
+                    <button type="button" class="btn-primary">
+                        <span class=" glyphicon glyphicon-thumbs-up"></span>
+                        <span>OK</span>
+                    </button>
+                    <h4>Enlaces Relacionados</h4>
+                    <ul class="sidebar-nav">
+                        <li>
+                            <a href="#" title="site 1"/>
+                            site 1
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" title="site 2"/>
+                            site 2
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" title="site 3"/>
+                            site 3
+                            </a>
+                        </li>
+                    </ul>
+                </aside>
+            </div>
+        </div>
+        </div>
+        <footer class="container">
+        </footer>
+
+        <script src="js/jquery-1.11.2.min.js" type="text/javascript"></script>
+        <script src="js/bootstrap.min.js" type="text/javascript"></script>
+    </body>
+</html>
