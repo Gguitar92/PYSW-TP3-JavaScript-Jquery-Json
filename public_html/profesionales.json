@@ -1,0 +1,54 @@
+{
+    "profesionales":[
+   {
+       "matricula": "MD-8765",
+       "apellido": "Sanabria",
+       "nombres": "Leandro Ismael",
+       "email": "leandors@hotmail.com",
+       "fechaMatriculacion": "16-12-1999",
+       "tipoProfesion": "Clinico",
+       "ambito": "p",
+       "estado": "true"
+   },
+   {
+       "matricula": "GD-5486",
+       "apellido": "Rojas",
+       "nombres": "Candelaria Maria",
+       "email": "cmr@hotmail.com",
+       "fechaMatriculacion": "16-12-1999",
+       "tipoProfesion": "Pediatra",
+       "ambito": "n",
+       "estado": "true"
+   },
+   {
+       "matricula": "GD-6248",
+       "apellido": "Calvo",
+       "nombres": "Marta Susana",
+       "email": "cal@hotmail.com",
+       "fechaMatriculacion": "16-12-1999",
+       "tipoProfesion": "Pediatra",
+       "ambito": "n",
+       "estado": "false"
+   },
+   {
+       "matricula": "GD-5548",
+       "apellido": "Rinaudo",
+       "nombres": "Alejandra Mónica",
+       "email": "rinal@hotmail.com",
+       "fechaMatriculacion": "16-12-1999",
+       "tipoProfesion": "Otro",
+       "ambito": "n",
+       "estado": "true"
+   },
+   {
+       "matricula": "GD-5896",
+       "apellido": "Villar",
+       "nombres": " Miguel",
+       "email": "migue@hotmail.com",
+       "fechaMatriculacion": "16-12-1999",
+       "tipoProfesion": "Traumatologo",
+       "ambito": "p",
+       "estado": "true"
+   }
+]
+}
