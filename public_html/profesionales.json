@@ -1,12 +1,22 @@
 {
     "profesionales":[
+    {
+       "matricula": "AA-0000",
+       "apellido": "Vargas",
+       "nombres": "Juan",
+       "email": "Juanv@hotmail.com",
+       "fechaMatriculacion": "16-12-2015",
+       "especialidad": "Clinico",
+       "ambito": "p",
+       "estado": "true"
+   },
    {
        "matricula": "MD-8765",
        "apellido": "Sanabria",
        "nombres": "Leandro Ismael",
        "email": "leandors@hotmail.com",
        "fechaMatriculacion": "16-12-1999",
-       "tipoProfesion": "Clinico",
+       "especialidad": "Clinico",
        "ambito": "p",
        "estado": "true"
    },
@@ -16,7 +26,7 @@
        "nombres": "Candelaria Maria",
        "email": "cmr@hotmail.com",
        "fechaMatriculacion": "16-12-1999",
-       "tipoProfesion": "Pediatra",
+       "especialidad": "Pediatra",
        "ambito": "n",
        "estado": "true"
    },
@@ -26,7 +36,7 @@
        "nombres": "Marta Susana",
        "email": "cal@hotmail.com",
        "fechaMatriculacion": "16-12-1999",
-       "tipoProfesion": "Pediatra",
+       "especialidad": "Pediatra",
        "ambito": "n",
        "estado": "false"
    },
@@ -36,7 +46,7 @@
        "nombres": "Alejandra Mónica",
        "email": "rinal@hotmail.com",
        "fechaMatriculacion": "16-12-1999",
-       "tipoProfesion": "Otro",
+       "especialidad": "Otro",
        "ambito": "n",
        "estado": "true"
    },
@@ -46,7 +56,7 @@
        "nombres": " Miguel",
        "email": "migue@hotmail.com",
        "fechaMatriculacion": "16-12-1999",
-       "tipoProfesion": "Traumatologo",
+       "especialidad": "Traumatologo",
        "ambito": "p",
        "estado": "true"
    }

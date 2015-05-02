@@ -64,51 +64,51 @@ and open the template in the editor.
                             Busque un Profesional
                         </h3>
                         <div class="form-group" >
-                            <label for="apellido" class="col-sm-3 control-label">Apellido:</label>
+                            <label for="txtApellido" class="col-sm-3 control-label">Apellido:</label>
                             <div class="col-sm-7">
-                                <input type="text" class="form-control" id="apellido" placeholder="Apellido:">
+                                <input type="text" class="form-control" id="txtApellido" placeholder="Apellido:">
                             </div>
                         </div>
 
                         <div class="form-group" >
-                            <label for="nombre" class="col-sm-3 control-label">Nombre:</label>
+                            <label for="txtNombre" class="col-sm-3 control-label">Nombre:</label>
                             <div class="col-sm-7">
-                                <input type="text" class="form-control" id="nombre" placeholder="Nombre:">
+                                <input type="text" class="form-control" id="txtNombre" placeholder="Nombre:">
                             </div>
                         </div>
 
                         <div class="form-group" >
-                            <label for="matricula" class="col-sm-3 control-label">Matricula:</label>
+                            <label for="txtMatricula" class="col-sm-3 control-label">Matricula:</label>
                             <div class="col-sm-7">
-                                <input type="text" class="form-control" id="matricula" placeholder="Matricula:">
+                                <input type="text" class="form-control" id="txtMatricula" placeholder="Matricula:">
                             </div>
                         </div>
 
                         <div class="form-group" >
-                            <label for="matricula-date" class="col-sm-3 control-label">Matriculado desde:</label>
+                            <label for="txtMatricula-date" class="col-sm-3 control-label">Matriculado desde:</label>
                             <div class="col-sm-7">
-                                <input type="date" class="form-control" id="matricula-date" >
+                                <input type="date" class="form-control" id="txtMatricula-date" >
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label for="ambito" class="col-sm-3 control-label">Ambito:</label>
                             <div class="col-sm-7">
-                                <input type="radio" class="radio-inline" name="ambito" value="Prov" checked>Prov
-                                <input type="radio" class="radio-inline" name="ambito" value="Nac">Nac
+                                <input type="radio" class="radio-inline" id="radioProv" name="ambito" value="p" checked>Prov
+                                <input type="radio" class="radio-inline" id="radioNac" name="ambito" value="n">Nac
                             </div>
                         </div>
                         
                         <div class="form-group" id="especialidad" hidden>
                             <label for="especialidad" class="col-sm-3 control-label">Especialidad:</label>
                             <div class="col-sm-7">
-                                <select class="form-control" id="cmbEspacialidad">
-                                    <option value="clinico">Clinico</option>
-                                    <option value="odontologo">Odontologo</option>
-                                    <option value="oftalmologo">Oftalmologo</option>
-                                    <option value="traumatologo">Traumatologo</option>
-                                    <option value="pediatra">Pediatra</option>
-                                    <option value="otro">Otro</option>
+                                <select class="form-control" id="cmbEspecialidad">
+                                    <option value="Clinico">Clinico</option>
+                                    <option value="Odontologo">Odontologo</option>
+                                    <option value="Oftalmologo">Oftalmologo</option>
+                                    <option value="Traumatologo">Traumatologo</option>
+                                    <option value="Pediatra">Pediatra</option>
+                                    <option value="Otro">Otro</option>
                                 </select>
                             </div>
                         </div>
@@ -123,11 +123,11 @@ and open the template in the editor.
                         <div class="text-center text-info" id="mensaje"></div>
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-10">
-                                <button type="button" class="btn btn-primary">
+                                <button type="button" class="btn btn-primary" id="btnBuscar">
                                     <span class="glyphicon glyphicon-search"></span>
                                     Buscar
                                 </button>
-                                <button type="button" class="btn btn-success">
+                                <button type="button" class="btn btn-success" id="btnLimpiar">
                                     <span class="glyphicon glyphicon-erase"></span>
                                     Limpiar
                                 </button>
@@ -141,7 +141,8 @@ and open the template in the editor.
                         Profesionales Encontrados
                     </h3>
                     <div class="table-responsive">
-                        <table class="table table-bordered table-hover" style="background: white">
+                        <table class="table table-bordered table-hover" style="background: white" id="tblProfesionales">
+                            <thead>
                             <tr class="active">
                                 <th>Apellido</th>
                                 <th>Nombre</th>
@@ -149,8 +150,9 @@ and open the template in the editor.
                                 <th>Matricula</th>
                                 <th>Fecha de Matr.</th>
                                 <th>Ambito</th>
+                                <th>Especialidad</th>
                             </tr>
-
+                            </thead>
                             <tr class="danger">
                                 <td>Maizarez</td>
                                 <td>Raul alberto</td>
@@ -158,6 +160,7 @@ and open the template in the editor.
                                 <td>2345</td>
                                 <td>22-10-1997</td>
                                 <td>Provincial</td>
+                                <td>Clinico</td>
                             </tr>
 
                             <tr>
@@ -167,6 +170,7 @@ and open the template in the editor.
                                 <td>8474</td>
                                 <td>22-10-1997</td>
                                 <td>Nacioonal</td>
+                                <td>Clinico</td>
                             </tr>
 
                             <tr class="success">
@@ -176,6 +180,7 @@ and open the template in the editor.
                                 <td>2455</td>
                                 <td>22-10-1997</td>
                                 <td>Nacioonal</td>
+                                <td>Clinico</td>
                             </tr>
 
                             <tr>
@@ -185,8 +190,10 @@ and open the template in the editor.
                                 <td>2488</td>
                                 <td>22-10-1997</td>
                                 <td>Nacioonal</td>
+                                <td>Clinico</td>
                             </tr>
                         </table>
+                        <div class="text-center text-info" id="mensajeBusq"></div>
                     </div>
                 </div>
 
