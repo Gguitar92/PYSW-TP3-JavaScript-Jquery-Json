@@ -36,14 +36,14 @@ and open the template in the editor.
                             <li><a href="#">Novedades</a></li>
                             <li><a href="#">Galeria</a></li>
                             <li><a href="#">Contacto</a></li>
-                            <li class="active"><a href="profesionales.html">Profesionales</a></li>
+                            <li><a href="profesionales.html">Profesionales</a></li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" 
                                    role="button" aria-expanded="false">
                                     Administracion <span class="caret"></span>
                                 </a>
                                 <ul class="dropdown-menu" role="menu">
-                                    <li><a href="profesionales.html">Gestion Profesionales</a></li>
+                                    <li><a href="profesionales.html" class="active">Gestion Profesionales</a></li>
                                     <li><a href="#">Articulos</a></li>
                                     <li><a href="#">Foros</a></li>                        
                                 </ul>
@@ -59,45 +59,45 @@ and open the template in the editor.
                     <!--FORMULARIO-->
                     <form class="form-horizontal col-sm-offset-2 col-sm-8" id="formBusq" style="background: #ccc; border-radius: 20px">
                         <h3 class="text-center" style="color: #FF3604">
-                            Busque un Profesional
+                            Ingrese los Datos del Profesional
                         </h3>
+                        
+                        <div class="form-group" >
+                            <label for="txtMatricula" class="col-sm-3 control-label">Matricula:</label>
+                            <div class="col-sm-7">
+                                <input type="text" class="form-control" id="txtMatricula" placeholder="Matricula:" required maxlength="7">
+                            </div>
+                        </div>
+                        
                         <div class="form-group" >
                             <label for="txtApellido" class="col-sm-3 control-label">Apellido:</label>
                             <div class="col-sm-7">
-                                <input type="text" class="form-control" id="txtApellido" placeholder="Apellido:">
+                                <input type="text" class="form-control" id="txtApellido" placeholder="Apellido:" required maxlength="30">
                             </div>
                         </div>
 
                         <div class="form-group" >
                             <label for="txtNombre" class="col-sm-3 control-label">Nombre:</label>
                             <div class="col-sm-7">
-                                <input type="text" class="form-control" id="txtNombre" placeholder="Nombre:">
+                                <input type="text" class="form-control" id="txtNombre" placeholder="Nombre:" required maxlength="45">
                             </div>
                         </div>
 
                         <div class="form-group" >
-                            <label for="txtMatricula" class="col-sm-3 control-label">Matricula:</label>
+                            <label for="txtEmail" class="col-sm-3 control-label">Email:</label>
                             <div class="col-sm-7">
-                                <input type="text" class="form-control" id="txtMatricula" placeholder="Matricula:">
+                                <input type="email" class="form-control" id="txtEmail" placeholder="E-mail" required maxlength="30">
                             </div>
                         </div>
 
                         <div class="form-group" >
                             <label for="txtMatricula-date" class="col-sm-3 control-label">Matriculado desde:</label>
                             <div class="col-sm-7">
-                                <input type="date" class="form-control" id="txtMatricula-date" >
+                                <input type="date" class="form-control" id="txtFechaMatricula" required>
                             </div>
                         </div>
 
-                        <div class="form-group">
-                            <label for="ambito" class="col-sm-3 control-label">Ambito:</label>
-                            <div class="col-sm-7">
-                                <input type="radio" class="radio-inline" id="radioProv" name="ambito" value="p" checked>Prov
-                                <input type="radio" class="radio-inline" id="radioNac" name="ambito" value="n">Nac
-                            </div>
-                        </div>
-                        
-                        <div class="form-group" id="especialidad" hidden>
+                        <div class="form-group" id="especialidad">
                             <label for="especialidad" class="col-sm-3 control-label">Especialidad:</label>
                             <div class="col-sm-7">
                                 <select class="form-control" id="cmbEspecialidad">
@@ -111,19 +111,27 @@ and open the template in the editor.
                             </div>
                         </div>
                         
-                        <div class="form-group" >
-                            <label for="especialidad" class="col-sm-3 control-label"></label>
+                        <div class="form-group">
+                            <label for="ambito" class="col-sm-3 control-label">Ambito:</label>
                             <div class="col-sm-7">
-                                <input type="checkbox" id="chkBusqAvanzada" value="true" >Busq Avanzada
+                                <input type="radio" class="radio-inline" id="radioProv" name="ambito" value="p" checked>Prov
+                                <input type="radio" class="radio-inline" id="radioNac" name="ambito" value="n">Nac
+                            </div>
+                        </div>
+                        
+                        <div class="form-group" >
+                            <label for="chkEstado" class="col-sm-3 control-label">Estado: </label>
+                            <div class="col-sm-7">
+                                <input type="checkbox" id="chkEstado" value="true" >
                             </div>
                         </div>
                         
                         <div class="text-center text-info" id="mensaje"></div>
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-10">
-                                <button type="button" class="btn btn-primary" id="btnBuscar">
-                                    <span class="glyphicon glyphicon-search"></span>
-                                    Buscar
+                                <button type="submit" class="btn btn-primary" id="btnAgregar">
+                                    <span class="glyphicon glyphicon-plus"></span>
+                                    Agregar
                                 </button>
                                 <button type="button" class="btn btn-success" id="btnLimpiar">
                                     <span class="glyphicon glyphicon-erase"></span>
@@ -136,22 +144,22 @@ and open the template in the editor.
 
                     <!--TABLA-->
                     <h3 class="text-center" style="color: #FF3604">
-                        Profesionales Encontrados
+                        Profesionales
                     </h3>
                     <div class="table-responsive">
                         <table class="table table-bordered table-hover" style="background: white" id="tblProfesionales">
                             <thead>
-                            <tr class="active">
-                                <th>Apellido</th>
-                                <th>Nombre</th>
-                                <th>Email</th>
-                                <th>Matricula</th>
-                                <th>Fecha de Matr.</th>
-                                <th>Ambito</th>
-                                <th>Especialidad</th>
-                            </tr>
+                                <tr class="active">
+                                    <th>Apellido</th>
+                                    <th>Nombre</th>
+                                    <th>Email</th>
+                                    <th>Matricula</th>
+                                    <th>Fecha de Matr.</th>
+                                    <th>Ambito</th>
+                                    <th>Especialidad</th>
+                                </tr>
                             </thead>
-                            <tr class="danger">
+<!--                            <tr class="danger">
                                 <td>Maizarez</td>
                                 <td>Raul alberto</td>
                                 <td>Maizarez@gmail.com</td>
@@ -189,7 +197,7 @@ and open the template in the editor.
                                 <td>22-10-1997</td>
                                 <td>Nacioonal</td>
                                 <td>Clinico</td>
-                            </tr>
+                            </tr>-->
                         </table>
                         <div class="text-center text-info" id="mensajeBusq"></div>
                     </div>
@@ -230,6 +238,6 @@ and open the template in the editor.
 
         <script src="js/jquery-1.11.2.min.js" type="text/javascript"></script>
         <script src="js/bootstrap.min.js" type="text/javascript"></script>
-        <script src="js/parte1.js" type="text/javascript"></script>
+        <script src="js/parte2.js" type="text/javascript"></script>
     </body>
 </html>
