@@ -9,14 +9,13 @@ App.Practico = (function() {
     //contenedor para el archivo json
     var arrayProfesionales; 
     
-    var validarMatricula = function(){
-        $("#matricula").change(function (){
-            var validatorMatricula =new RegExp("^([A-Z]|[a-z]){2}\\u002D\\d{4}$");
-            console.log(validatorMatricula.test($(this).val())+" - mat:"+" "+$(this).val())
-            if (!validatorMatricula.test($(this).val())){
-                mostrarMsg("la Matricula es incorrecta");
-            }
-        });
+    var validarMatricula = function(matricula){
+        var validatorMatricula = new RegExp("^([A-Z]|[a-z]){2}\\u002D\\d{4}$");
+        if (validatorMatricula.test(matricula.val()) || matricula.val()=="") {
+            return true;
+        }
+        mostrarMsg("la Matricula es incorrecta");
+        return false;
     };
     
     //muestra msj de las validaciones
@@ -42,7 +41,9 @@ App.Practico = (function() {
             console.log('app inicio');  
         },
         punto1 : function (){
-            validarMatricula();
+            $("#txtMatricula").change(function (){
+                validarMatricula($(this));
+            });
         },
         punto2 : function (){
             $("#chkBusqAvanzada").change(function (){
@@ -69,6 +70,8 @@ App.Practico = (function() {
 //                });
             });
         },
+        
+        // Busqueda de Profecionales EN array
         punto4 : function (){
           $("#btnBuscar").click(function(){
                 console.log("click buscar");
@@ -84,28 +87,42 @@ App.Practico = (function() {
                 }
                 
                 $("#tblProfesionales td").remove(); //limpio la tabla
-                
-                //recorro el array y comparo con los datos ingresados
-                $.each(arrayProfesionales,function (i,p){
-                    if (matricula != "" && p.matricula == matricula){
-                        agregarFila(p);
-                    }else{
-                        if($("#chkBusqAvanzada").is(":checked") && p.especialidad==especialidad){
-                            agregarFila(p);
+                //si la matricula es valida hago la busqueda
+                if(validarMatricula($("#txtMatricula"))){
+                    //recorro el array y comparo con los datos ingresados
+                    $.each(arrayProfesionales,function (i,p){
+                        if (matricula != ""){
+                            if (p.matricula.toLowerCase() == matricula.toLowerCase()){
+                                agregarFila(p);
+                            }
                         }else{
-                            if(!$("#chkBusqAvanzada").is(":checked") && ambito==p.ambito){
+                            if($("#chkBusqAvanzada").is(":checked") && p.especialidad==especialidad){
                                 agregarFila(p);
                             }else{
-                                if((nombres != "" && p.nombres.toLowerCase().contains(nombres)) 
-                                        || (apellido != "" && p.apellido.toLowerCase().contains(apellido))
-                                        || (email != "" && p.email==email)){
+                                if(!$("#chkBusqAvanzada").is(":checked") && ambito==p.ambito){
                                     agregarFila(p);
-                                }                            
+                                }else{
+                                    if((nombres != "" && p.nombres.toLowerCase().contains(nombres)) 
+                                            || (apellido != "" && p.apellido.toLowerCase().contains(apellido))
+                                            || (email != "" && p.email==email)){
+                                        agregarFila(p);
+                                    }                            
+                                }
                             }
                         }
-                    }
-                });
+                    });
+                }
           });
+        },
+        punto5 : function (){
+            $("#btnLimpiar").click(function (){
+                console.log("click limpiar");
+                $(':input', '#formBusq')
+                        .not(':button, :submit, :reset, :hidden')
+                        .val('')
+                        .removeAttr('checked')
+                        .removeAttr('selected');
+            });
         },
         init: function() {
             App.Practico.inicio();
@@ -113,6 +130,7 @@ App.Practico = (function() {
             App.Practico.punto2();
             App.Practico.punto3();
             App.Practico.punto4();
+            App.Practico.punto5();
         }
     };
 })();
